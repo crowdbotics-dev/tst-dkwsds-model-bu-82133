@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import NewMo
+from home.models import NewMo,NEwMo2
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -80,4 +80,10 @@ class NewMoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewMo
+        fields = "__all__"
+
+class NEwMo2Serializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = NEwMo2
         fields = "__all__"
