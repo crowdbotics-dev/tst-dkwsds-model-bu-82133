@@ -6,6 +6,12 @@ const tstdkwsdsmodelbuAPI = axios.create({
 function api_v1_login_create(payload) {
   return tstdkwsdsmodelbuAPI.post(`/api/v1/login/`, payload.data)
 }
+function api_v1_newmo_list(payload) {
+  return tstdkwsdsmodelbuAPI.get(`/api/v1/newmo/`)
+}
+function api_v1_newmo_create(payload) {
+  return tstdkwsdsmodelbuAPI.post(`/api/v1/newmo/`, payload.data)
+}
 function api_v1_signup_create(payload) {
   return tstdkwsdsmodelbuAPI.post(`/api/v1/signup/`, payload.data)
 }
@@ -32,6 +38,18 @@ function rest_auth_logout_retrieve(payload) {
 function rest_auth_logout_create(payload) {
   return tstdkwsdsmodelbuAPI.post(`/rest-auth/logout/`)
 }
+function api_v1_newmo_retrieve(payload) {
+  return tstdkwsdsmodelbuAPI.get(`/api/v1/newmo/${payload.id}/`)
+}
+function api_v1_newmo_update(payload) {
+  return tstdkwsdsmodelbuAPI.put(`/api/v1/newmo/${payload.id}/`, payload.data)
+}
+function api_v1_newmo_partial_update(payload) {
+  return tstdkwsdsmodelbuAPI.patch(`/api/v1/newmo/${payload.id}/`, payload.data)
+}
+function api_v1_newmo_destroy(payload) {
+  return tstdkwsdsmodelbuAPI.delete(`/api/v1/newmo/${payload.id}/`)
+}
 function rest_auth_registration_create(payload) {
   return tstdkwsdsmodelbuAPI.post(`/rest-auth/registration/`, payload.data)
 }
@@ -55,6 +73,8 @@ function rest_auth_registration_verify_email_create(payload) {
 }
 export const apiService = {
   api_v1_login_create,
+  api_v1_newmo_list,
+  api_v1_newmo_create,
   api_v1_signup_create,
   rest_auth_user_retrieve,
   rest_auth_user_update,
@@ -63,6 +83,10 @@ export const apiService = {
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
+  api_v1_newmo_retrieve,
+  api_v1_newmo_update,
+  api_v1_newmo_partial_update,
+  api_v1_newmo_destroy,
   rest_auth_registration_create,
   rest_auth_password_reset_create,
   rest_auth_password_change_create,
